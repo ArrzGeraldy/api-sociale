@@ -10,7 +10,6 @@ const deserialiedToken = (req: Request, res: Response, next: NextFunction) => {
 
   if (token.decoded) {
     res.locals.user = token.decoded;
-    console.log("token decoded");
     return next();
   }
 
