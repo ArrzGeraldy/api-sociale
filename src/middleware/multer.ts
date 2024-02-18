@@ -3,17 +3,9 @@ import multer from "multer";
 import path from "path";
 import { logger } from "../utils/logger";
 
-export const uploadMultiple = multer({
-  storage: multer.memoryStorage(),
-  limits: { fileSize: 1000000 },
-  fileFilter: function (req, file, cb) {
-    checkFileType(file, cb);
-  },
-}).array("image", 12);
-
 export const upload = multer({
   storage: multer.memoryStorage(),
-  limits: { fileSize: 3000000 },
+  limits: { fileSize: 1000000 },
   fileFilter: async function (req, file, cb) {
     checkFileType(file, cb);
   },
